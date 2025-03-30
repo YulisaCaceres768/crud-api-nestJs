@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RolesService } from './roles/roles.service';
+import { RolesModule } from './roles/roles.module';
 
 
 @Module({
@@ -20,6 +22,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
     }),
+    RolesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
